@@ -1,0 +1,94 @@
+[x] Instalar o Visual Studio 2019
+[x] Criar um Projeto Asp Web API
+[x] Rodar o Projeto
+[x] Criar uma Classe na Models 
+   Categoria { 
+   public int Id {get;set;}
+   public string {get; set;}
+   
+ 
+[x] Abrir Ferramentas -> Gerenciador de Pacotes Nuget -> Console do Gerenciador de Pacotes 
+[x] Executar o Comando: Install-Package Microsoft.EntityFrameworkCore.SqlServer
+[x] Executar o Comando: Install-Package Microsoft.EntityFrameworkCore.Tools
+[x] Criar uma Classe na Models : Contexto
+using Microsoft.EntityFrameworkCore;
+public class Context : DbContext  // herda da classe enityframeworkcore
+	{
+
+		public DbSet<Categoria> Categorias { get; set; }
+		protected override void OnConfiguring(DbContextOptionsBuilder optionbuilder)
+		{
+			optionbuilder.UseSqlServer(@"Server=LAPTOP-0NNHHKEC\SQLEXPRESS; Database=Cursomvc;Integrated Security=True");
+
+		}
+
+	}
+
+[x] Na Starup incluir a linha no metodo ConfigureServices(IServiceCollection services) :
+
+services.AddDbContext<Context>();
+
+[x] Abrir Ferramentas -> Gerenciador de Pacotes Nuget -> Console do Gerenciador de Pacotes 
+[x] Executar o Comando: Add-Migration InitalCreate
+[x] Caso roudou o Build da aplicação o comando anterior vai criar a pasta migration e fazer
+ o arquivo initial create.
+[] No Console Executar o Comando : Update-Database
+[x] Clicar agora na pasta controller -> Adicionar > Novo item com scafold
+[x] Controlador MVC com exibições usando o Entity Framework
+[x] Selecionar a Classe de Modelo e a classe de Contesto no caso Categoria e Context
+[x] Pasta Views\Shared _Layout.chtml e criar essa linha no nav da div do menu
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Categorias" asp-action="Index">Categorias</a>
+						</li>
+[x] Executar a aplicação e Cadastrar uma Categoria
+[x]Criar na Model a Classe dos Produtos create nova classe Produto
+public class Produtos
+	{
+		public int Id { get; set; }
+		public string  Descricao { get; set; }
+		public int Quantidade { get; set; }
+		public int CategoriaId { get; set; }
+		public Categoria Categoria { get; set; }
+	}
+[x] Criar em Categorias: public List<Produto> Produtos {get; set;}
+[x] Adicionar no Context : public DbSet<Produto> Produtos {get; set;}
+[x] Abrir Ferramentas -> Gerenciador de Pacotes Nuget -> Console do Gerenciador de Pacotes 
+[x] Executar o Comando: Add-Migration TabelaProduto
+[x] No Console Executar o Comando : Update-Database
+[x] Clicar agora na pasta controller -> Adicionar > Novo item com scafold
+[x] Controlador MVC com exibições usando o Entity Framework
+[x] Selecionar a Classe de Modelo e a classe de Context no caso Produto e Context
+[x] Pasta Views\Shared _Layout.chtml e criar essa linha no nav da div do menu
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Produtos" asp-action="Index">Produtos</a>
+						</li>
+[x] Va no projeot na Pasta ProdutosController procure todos os view data : ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Id");
+e Troque a segunda opção de ID por Descricao veja abaixo:
+ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Descricao");
+em todos ViewData 
+[x] Va na pasta produtos clique em index e mude a linha @Html.DisplayFor(modelItem => item.Categoria.Id) para :
+@Html.DisplayFor(modelItem => item.Categoria.Descricao)
+[x] Va na pasta produtos clique em Details e mude a linha @Html.DisplayFor(modelItem => item.Categoria.Id) para :
+@Html.DisplayFor(modelItem => item.Categoria.Descricao)
+[x] Va na pasta produtos clique em Delete e mude a linha @Html.DisplayFor(modelItem => item.Categoria.Id) para :
+@Html.DisplayFor(modelItem => item.Categoria.Descricao)
+[x] Colocar Model de Categoria e Produtos :
+System.ComponetModel.DataAnnotations;
+[Display(Name = "Descrição"]
+[x] Criar a propriedade required para preenchimento obrigatório da descrição
+ [Required(ErrorMessage = "O campo Descrição é Obrigatório")]
+[x] Opcional para a Quantidade  Maxima com Range e Descrição do Produto
+[Range(1,20, ErrorMessage="A Descricao deve estar entre 1 a 20 caracteres")]
+[Range(1,50, ErrorMessage="A quantidade deve estar entre 1 a 50")]
+
+** git hub
+git init 
+git remote add origin https://github.com/fermleme/projeto-mvc-api-rest.git
+
+set der erro no commit git rest .
+
+git add. 
+git commit -m "Projeto MVC Entity FrameworkCore "
+git push -u orign master  
+
+						

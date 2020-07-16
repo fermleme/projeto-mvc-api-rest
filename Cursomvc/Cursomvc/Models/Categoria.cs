@@ -14,7 +14,7 @@ namespace Cursomvc.Models
         //[Range(1, 50, ErrorMessage = "A Descricao deve estar entre 1 a 40 caracteres")]
         public string Descricao {get; set;}
 
-        public List<Produto> Produtos { get; set; }
+        //public virtual  List<Produto> Produtos { get; set; }
 
     }
 }

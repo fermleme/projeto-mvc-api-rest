@@ -160,8 +160,6 @@ C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\bin\Debug\netcoreapp3
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Cursomvc.csproj.CoreCompileInputs.cache
-C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Cursomvc.MvcApplicationPartsAssemblyInfo.cache
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Create.cshtml.g.cs
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Delete.cshtml.g.cs
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Details.cshtml.g.cs
@@ -172,3 +170,5 @@ C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Details.cshtml.g.cs
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Edit.cshtml.g.cs
 C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Index.cshtml.g.cs
+C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Cursomvc.csproj.CoreCompileInputs.cache
+C:\temp\Estudos\NET\projeto-mvc-api-rest\Cursomvc\Cursomvc\obj\Debug\netcoreapp3.1\Cursomvc.MvcApplicationPartsAssemblyInfo.cache

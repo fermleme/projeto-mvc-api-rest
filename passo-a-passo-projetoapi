@@ -1,0 +1,56 @@
+[x] Clicar em solution / Botão direito do Mouse / Novo Projeto / Aplicação Web Net Core / CursoApi com Tipo Api
+[x] Ao Abrir o projeto apagar o exemplo na Controller e a classe de Exemplo
+[x] Vamos Habilitar o Swagger para gerenciar e documentar a nossa API, clicar com o botão direito do mouse, em
+Gerenciar Pacotes Nuggets : procurar SwashBukle.AspNetCore
+[x] Botão Direito projeto propriedades: 
+Compilar Ativar Arquivo de documetnação XML - Salvar
+Depurar / Iniciar navegador swagger.
+Run
+[x] Na Startup alterar as configurações e habilitar e injetar o  swagger
+No ConfigureServices(ISericecollection services)
+Adicionar :
+services.AddSwaggerGen(c => { c.SwaggerDoc("v1" , new OpenApiInfo { Title = "Curso API", Version = "v1" }); });
+[x] no if (env.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+]
+// AQUI INSERIR ESTE CODIGO Abaixo.	
+		app.UseSwagger();
+        app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Curso Api"); });
+
+
+
+
+Depois importar a biblioteca do swagger
+[x] Dar um build e verificar se gerou o arquivo XML.
+[x] Ir ao Projeto adicionar a referencia e colocar o projeto Cursomvc.
+[x] Va ate a pasta Controller adicionar com scafolder selecione Controlador API com ações usando o Entity Framework
+Selecione a Classe Categoria e o Context
+[x] Caso houver um erro reinstalar os pacotes Entity Framework : Install-Package Microsoft.EntityFrameworkCore no Console de Geração de Pacotes
+[x] Ir no startup do Projeto CursoMVC e colcar o comando abaixo na Startup do Apicurso.
+      public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            services.AddDbContext<Context>();  // copiar esta linha no projeto cursomvc e colocar aqui para referenciar.
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1" , new OpenApiInfo { Title = "Curso API", Version = "v1" }); });
+        }
+ [x] Colocar este comigo no inicio da Startup 
+ using Cursomvc.Models; 
+ para importar o Context]
+ 
+ [x] para rodar os 2 projetos ao mesmo tempo clica no solution projetos de inicialização colocar os 2 projetos para inicializar ao mesmo tempo.
+ [x] Na classe de Categorias vamos remover list de Produtos.
+ [x] Gerar o Scafold de produtos na Controller
+ [x] Compitar e startar o projeto
+ [] Va na controller do produto no projeto api 
+         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
+        {
+            return await _context.Produtos.Include("Categoria").ToListAsync();   // Incluir esta linha
+        }
+[x] nas linhas abaixo no public async torcar por este comando:
+var produto = await _context.Produtos.Include("Categoria").FirstOrDefaultAsync( x => x.Id == id);
+[x] Salva e Compila
+
+ 
+
+
